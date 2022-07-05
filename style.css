@@ -1,0 +1,148 @@
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html,
+body {
+	width: 100%;
+	height: 100vh;
+	/* background-color: rgb(95, 93, 93); */
+
+	font-family: Helvetica, sans-serif;
+}
+
+body {
+	display: grid;
+	grid-template-rows: min-content 1fr;
+	background-image: radial-gradient(#868686 60%, #3f3f3f, #212020);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.title {
+	font-size: 1.6rem;
+	text-align: center;
+	text-transform: uppercase;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	text-shadow: 2px 2px 4px black;
+	padding: 1rem 0;
+	/* background-color: rgb(39, 117, 251);	 */
+	background-color: rgb(91, 5, 106);
+	color: rgb(222, 221, 221);
+}
+
+.app-container {
+	width: 100%;
+	padding: 20px 20px;
+	display: grid;
+	place-content: center;
+	/* background-image: linear-gradient(rgba(0, 0, 0, 0.652), rgba(0, 0, 0, 0.405)),
+		url(images/esdeath7.jpg); */
+	background-image: url(images/kyaru.png), url(images/kyaru5.png);
+	background-repeat: no-repeat, no-repeat;
+	background-size: contain, contain;
+	background-position: right, left;
+}
+
+.calc {
+	width: 500px;
+	min-height: 750px;
+	padding: 25px;
+	background-color: rgb(0, 0, 0);
+	border-radius: 25px;
+	display: grid;
+	grid-template-rows: 20% 80%;
+}
+
+.calc__visor {
+	width: 100%;
+	/* height: 20%; */
+	padding: 0px 20px;
+	display: grid;
+	grid-template-rows: 1fr minmax(1fr, auto);
+	grid-template-columns: 1fr min-content;
+	align-items: center;
+	background-color: rgb(222, 222, 222);
+	color: rgb(0, 0, 0);
+}
+
+.calc__output-previous,
+.calc__output-current {
+	text-align: right;
+	/* justify-self: end; */
+	word-wrap: break-word;
+	overflow-x: hidden;
+	overflow-wrap: break-word;
+	/* border: 2px solid red; */
+	word-wrap: break-word;
+	word-break: break-all;
+}
+
+.calc__output-previous {
+	font-size: 1.4rem;
+	min-height: 1.6rem;
+	color: rgb(96, 94, 94);
+	font-weight: lighter;
+}
+.calc__operator {
+	margin-left: 5px;
+}
+.calc__output-current {
+	grid-column: span 2;
+	font-size: 2.2rem;
+	min-height: 2.6rem;
+	font-weight: bold;
+	align-self: start;
+}
+
+.calc__keyboard {
+	/* height: 80%; */
+	padding: 1.2rem;
+	background-color: rgb(10, 10, 10);
+	display: grid;
+	gap: 20px;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(5, 1fr);
+}
+
+.calc__key {
+	font-size: 1.3rem;
+	background-color: rgb(60, 61, 61);
+	color: white;
+	border-radius: 100px;
+	border: 1px solid black;
+	cursor: pointer;
+	transition: all 0.35s ease;
+	outline: none;
+}
+
+.calc__key:hover {
+	filter: brightness(1.5);
+	color: black;
+}
+.calc__key:active {
+	filter: brightness(1);
+}
+
+.calc__key--zero {
+	grid-column: span 2;
+}
+.calc__key--operation {
+	background-color: rgb(113, 162, 246);
+}
+
+@media screen and (max-width: 1400px) {
+	html,
+	body {
+		height: 100vh;
+		background-color: rgb(66, 66, 66);
+		background-image: none;
+	}
+
+	.app-container {
+		background-image: none, none;
+	}
+}
