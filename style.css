@@ -119,7 +119,8 @@ body {
 	outline: none;
 }
 
-.calc__key:hover {
+.calc__key:hover,
+.active {
 	filter: brightness(1.5);
 	color: black;
 }
