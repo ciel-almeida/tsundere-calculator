@@ -160,6 +160,7 @@ class Calculator {
 		// Changing operators when already there is one.
 		if (this.state.current === '' && this.state.previous !== '') {
 			this.updateState(this.state.previous, '', operation);
+			this.playAudio('click');
 			return;
 		}
 		this.playAudio('click');
